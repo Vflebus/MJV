@@ -14,7 +14,8 @@ export default {
         'carton-leger': '#C08F4F'
       },
       backgroundImage: {
-        'desk': "url('/assets/imgs/desk.png')",
+        'desk': "url('/assets/imgs/desk.webp')",
+        'fond': "url('/assets/imgs/fond.webp')",
       }
     },
   },
