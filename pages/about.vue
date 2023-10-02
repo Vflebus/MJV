@@ -1,17 +1,17 @@
 <template>
-    <div class="w-screen h-screen flex justify-center items-end">
+    <div class="w-screen h-screen flex justify-center items-center">
         <div class="pointer-events-none	">
-            <Transition name="fiche">
+            <Transition name="fiche" appear>
                 <div v-if="show" class="fixed bottom-0 left-0 w-screen h-screen">
-                    <NuxtImg src="/images/feuilleNom.webp" alt="fiche principale"
+                    <img src="/images/feuilleNom.webp" alt="fiche principale"
                         class="absolute bottom-0 left-0 xl:h-screen transform-gpu" />
-                    <NuxtImg src="/images/fichePrecisions.webp" alt="fiche de précisions"
+                    <img src="/images/fichePrecisions.webp" alt="fiche de précisions"
                         class="absolute bottom-0 left-0 w-[50%] xl:w-[20%] transform-gpu" />
                 </div>
             </Transition>
-            <Transition name="marie">
-                <NuxtImg v-if="show" src="/images/marie1291.webp" alt="Personnage Marie d'Animal Crossing"
-                    class="h-[40%] max-w-[50%] absolute top-0 pointer-events-none xl:h-full xl:max-w-full xl:[transform:rotateY(180deg)] xl:right-0 transform-gpu" />
+            <Transition name="marie" appear>
+                <img v-if="show" src="/images/marie1291.webp" alt="Personnage Marie d'Animal Crossing"
+                    class="h-[40%] max-w-[50%] absolute top-0 left-0 pointer-events-none xl:h-full xl:max-w-full xl:[transform:rotateY(180deg)] xl:[left:unset] xl:right-0 transform-gpu" />
             </Transition>
         </div>
         <NuxtLink href="/">Index !</NuxtLink>
@@ -36,14 +36,12 @@ onMounted(() => {
     transition: all 1.5s ease;
 }
 
-.marie-enter-from,
-.marie-leave-to {
+.marie-enter-from {
     transform: translateX(-100%);
     opacity: 0;
 }
 
-.fiche-enter-from,
-.fiche-leave-to {
+.fiche-enter-from {
     transform: translateY(100%);
     opacity: 0;
 }
