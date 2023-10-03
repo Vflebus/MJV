@@ -6,7 +6,7 @@
                     class="h-[40%] max-w-[50%] absolute top-0 left-0 pointer-events-none xl:h-full xl:max-w-full transform-gpu" />
             </Transition>
         </div>
-        <NuxtLink href="/">Page 1 !</NuxtLink>
+        <NuxtLink href="/" class="underline">Page 1 !</NuxtLink>
     </div>
 </template>
   

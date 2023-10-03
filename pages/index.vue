@@ -14,7 +14,7 @@
                     class="marie h-[40%] max-w-[50%] absolute top-0 left-0 pointer-events-none xl:h-full xl:max-w-full xl:[transform:rotateY(180deg)] xl:[left:unset] xl:right-0 transform-gpu" />
             </Transition>
         </div>
-        <NuxtLink href="/about">Page 2 !</NuxtLink>
+        <NuxtLink href="/about" class="underline">Page 2 !</NuxtLink>
     </div>
 </template>
   
