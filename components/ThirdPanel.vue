@@ -30,7 +30,7 @@ onUnmounted(() => {
         <div class="relative overflow-visible w-[90%] landscape:h-[85%] landscape:w-[unset]" id="infosComplementaires">
             <img src="/images/infosPratiques.png" alt="graph de la MJV" class="w-full landscape:w-[unset] landscape:h-full">
             <a href="https://discord.gg/v35ZARDXWh"><img src="/images/discordLogo.png" alt=""
-                    class="absolute bottom-[5%] right-[10%] w-[50%] bg-white/50"></a>
+                    class="absolute bottom-[5%] right-[10%] w-[50%] bg-white/50 rounded-lg shadow-[0_4px_6px_rgba(255,255,255,0.5)]"></a>
         </div>
     </div>
 </template>
