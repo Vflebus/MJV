@@ -55,7 +55,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-    <div class="w-full h-screen relative flex flex-col justify-end items-center pb-4 overflow-y-visible gap-8 font-bold uppercase text-center xl:overflow-hidden"
+    <div class="w-full h-screen relative flex flex-col justify-end items-center pb-4 overflow-y-visible gap-8 font-bold uppercase text-center"
         id="panel2">
         <div class="relative overflow-visible w-[85%] xl:h-[85%] xl:w-[unset]">
             <img src="/images/note.png" alt="" class="w-[50%] rotate-[0deg] absolute -top-[15%] -right-[0%]" id="levelNote">

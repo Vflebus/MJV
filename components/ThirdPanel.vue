@@ -5,7 +5,7 @@
         <div class="relative overflow-visible w-[90%] xl:h-[85%] xl:w-[unset]">
             <img src="/images/infosPratiques.png" alt="graph de la MJV" class="w-full xl:w-[unset] xl:h-full">
             <a href="https://discord.gg/v35ZARDXWh"><img src="/images/discordLogo.png" alt=""
-                    class="absolute bottom-8 right-8 w-[40%] bg-white/50"></a>
+                    class="absolute bottom-[5%] right-[10%] w-[50%] bg-white/50"></a>
         </div>
     </div>
 </template>
