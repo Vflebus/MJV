@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: "BATB";
+    src: url("../../public/fonts/Beauty\ and\ the\ Beast\ Sample.ttf");
+  }

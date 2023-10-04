@@ -16,6 +16,12 @@ export default {
       backgroundImage: {
         'desk': "url('/assets/imgs/desk.webp')",
         'fond': "url('/assets/imgs/fond.webp')",
+      },
+      boxShadow: {
+        'paper': '0px 0px 5px 0px rgba(0,0,0,0.81)'
+      },
+      fontFamily: {
+        batb: ["batb", "cursive"],
       }
     },
   },

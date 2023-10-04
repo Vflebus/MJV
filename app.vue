@@ -1,8 +1,8 @@
 <template>
   <NuxtLayout>
-    <GsapPanel />
-    <div class="h-screen w-full bg-purple-500"></div>
-    <div class="h-screen w-full bg-blue-500"></div>
+    <FirstPanel />
+    <SecondPanel />
+    <ThirdPanel />
   </NuxtLayout>
 </template>
 

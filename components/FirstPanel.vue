@@ -1,65 +1,54 @@
+<script setup>
+import gsap from 'gsap';
 
-import { Transition } from 'vue';
+let ctx;
 
-import { Transition } from 'vue';
+onMounted(() => {
+    ctx = gsap.context((self) => {
+        gsap.from('.fiche', {
+            yPercent: 100,
+            duration: 1
+        })
+        gsap.from('.marie', {
+            xPercent: -100,
+            duration: 1
+        })
+        gsap.to('.fiche', {
+            opacity: 0,
+            xPercent: -100,
+            scrollTrigger: {
+                trigger: '#panel1',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true,
+            },
+        })
+        gsap.to('.marie', {
+            // opacity: 0,
+            x: window.innerWidth,
+            scrollTrigger: {
+                trigger: '#panel1',
+                // endTrigger: '#panel1',
+                start: 'top top',
+                end: 'bottom top',
+                scrub: true,
+            },
+        })
+    }, '#main'); // <- Scope!
+});
+
+onUnmounted(() => {
+    ctx.revert(); // <- Easy Cleanup!
+});
+</script>
+
 <template>
-    <div class="w-full h-screen overflow-hidden relative">
-        <Transition name="fiche" appear>
-            <img v-if="show" src="/images/feuilleNom.webp" alt="fiche principale"
-                class="absolute bottom-0 left-0 xl:h-screen transform-gpu" />
-        </Transition>
-        <Transition name="fiche" appear>
-            <img v-if="show" src="/images/fichePrecisions.webp" alt="fiche de précisions"
-                class="absolute bottom-0 left-0 w-[50%] xl:w-[20%] transform-gpu" />
-        </Transition>
-        <Transition name="marie" appear>
-            <img v-if="show" ref="marie" src="/images/marie1291.webp" alt="Personnage Marie d'Animal Crossing"
-                class="marie h-[40%] max-w-[50%] absolute top-0 left-0 xl:h-full xl:max-w-full xl:[transform:rotateY(180deg)] xl:[left:unset] xl:right-0 transform-gpu" />
-        </Transition>
+    <div class="w-full h-screen overflow-hidden relative" id="panel1">
+        <img src="/images/feuilleNom.webp" alt="fiche principale"
+            class="fiche fixed bottom-0 left-0 xl:h-screen transform-gpu" id="ficheGrd" />
+        <img src="/images/fichePrecisions.webp" alt="fiche de précisions"
+            class="fiche fixed bottom-0 left-0 w-[50%] xl:w-[20%] transform-gpu" />
+        <img src="/images/marie1291.webp" alt="Personnage Marie d'Animal Crossing"
+            class="marie w-[40%] fixed top-0 left-0 xl:max-h-full xl:max-w-[40%] xl:w-[unset] xl:[transform:rotateY(180deg)] xl:[left:unset] xl:right-0 transform-gpu" />
     </div>
 </template>
-
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const show = ref(false)
-const marie = ref<HTMLImageElement>()
-onMounted(() => {
-    setTimeout(() => { show.value = true }, 1000);
-    console.log(marie.value);
-})
-onBeforeUnmount(() => {
-    marie.value!.classList.add('marieLeave')
-})
-</script>
-  
-  
-<style>
-.marie-enter-active,
-.fiche-enter-active {
-    transition: all 1.5s ease;
-}
-
-.marie-enter-from {
-    transform: translateX(-100%);
-    opacity: 0;
-}
-
-.fiche-enter-from {
-    transform: translateY(100%);
-    opacity: 0;
-}
-
-.marieLeave {
-    transition: all .2s ease;
-    transform: rotateY(0deg);
-}
-
-@media screen and (min-width: 1280px) {
-
-    .marie-enter-from {
-        transform: translateX(100%) rotateY(180deg);
-        /* opacity: 0; */
-    }
-}
-</style>
