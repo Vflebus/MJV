@@ -13,6 +13,7 @@ onMounted(() => {
                 start: 'top bottom',
                 end: 'bottom bottom',
                 scrub: true,
+                invalidateOnRefresh: true,
                 // markers: true
             },
             onComplete: () => {
@@ -20,7 +21,7 @@ onMounted(() => {
                 gsap.set('.graph', { rotation: 0 })
                 gsap.to('.graph', {
                     rotation: -45,
-                    x: -window.innerWidth,
+                    x: () => -window.innerWidth,
                     transformOrigin: 'bottom center',
                     scrollTrigger: {
                         trigger: '#panel2',
@@ -28,6 +29,7 @@ onMounted(() => {
                         start: 'bottom 85%',
                         end: 'bottom bottom',
                         scrub: true,
+                        invalidateOnRefresh: true,
                         // markers: true
                     },
                 })
@@ -35,7 +37,7 @@ onMounted(() => {
         })
         gsap.to('#levelNote', {
             rotation: 45,
-            x: window.innerWidth,
+            x: () => window.innerWidth,
             transformOrigin: 'bottom center',
             scrollTrigger: {
                 trigger: '#panel2',
@@ -43,6 +45,7 @@ onMounted(() => {
                 start: 'bottom 85%',
                 end: 'bottom bottom',
                 scrub: true,
+                invalidateOnRefresh: true,
                 // markers: true
             },
         })
@@ -57,9 +60,10 @@ onUnmounted(() => {
 <template>
     <div class="w-full h-screen relative flex flex-col justify-end items-center pb-4 overflow-y-visible gap-8 font-bold uppercase text-center"
         id="panel2">
-        <div class="relative overflow-visible w-[85%] xl:h-[85%] xl:w-[unset]">
+        <div class="relative overflow-visible w-[85%] landscape:h-[85%] landscape:w-[unset]">
             <img src="/images/note.png" alt="" class="w-[50%] rotate-[0deg] absolute -top-[15%] -right-[0%]" id="levelNote">
-            <img src="/images/MJVgraph.webp" alt="graph de la MJV" class="graph w-full shadow-paper xl:w-[unset] xl:h-full">
+            <img src="/images/MJVgraph.webp" alt="graph de la MJV"
+                class="graph w-full shadow-paper landscape:w-[unset] landscape:h-full">
         </div>
     </div>
 </template>
