@@ -1,4 +1,7 @@
 <template>
+  <Head>
+    <Title>Moi J'y Vais - La weekly rennaise</Title>
+  </Head>
   <NuxtLayout>
     <FirstPanel />
     <SecondPanel />
