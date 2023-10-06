@@ -17,7 +17,6 @@ onMounted(() => {
                 // markers: true
             },
             onComplete: () => {
-                console.log('complete')
                 gsap.set('.graph', { rotation: 0 })
                 gsap.to('.graph', {
                     rotation: -45,
