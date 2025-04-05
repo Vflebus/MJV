@@ -1,6 +1,7 @@
 <template>
   <Head>
     <Title>Moi J'y Vais - La weekly rennaise</Title>
+    <Meta name="description" content="Weekly Super Smash bros à Rennes" />
   </Head>
   <NuxtLayout>
     <FirstPanel />
@@ -10,8 +11,8 @@
 </template>
 
 <script setup lang="ts">
-import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 </script>
